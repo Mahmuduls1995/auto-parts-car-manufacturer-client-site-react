@@ -2,15 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-    
     const menuItem = <>
         <li><Link to='/'>Home</Link></li>
-        <li><Link to='/appoinment'>Appoinment</Link></li>
         <li><Link to='/review'>Review</Link></li>
         <li><Link to='/about'>About</Link></li>
-    </>
+        </>
     return (
-        <div class="navbar bg-secondary  ">
+        <div class="navbar bg-zinc-200 " >
             <div class="navbar-start px-12">
                 <div class="dropdown">
                     <label tabindex="0" class="btn btn-ghost lg:hidden">

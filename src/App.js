@@ -1,19 +1,16 @@
-import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Home from './Components/Pages/Home/Home';
-import Navbar from './Components/Pages/Navbar/Navbar';
+import Navbar from './Pages/Shared/Navbar';
+import { Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home/Home';
 
 function App() {
   return (
-    <div className=" ">
-      <Navbar></Navbar>
+    <div className="mx-w-7xl mx-auto px-12">
+     <Navbar></Navbar>
       <Routes>
         <Route path="/" element={<Home></Home>} />
         
-        {/* <Route path="/login" element={<Login></Login>} />
-        <Route path="/signup" element={<SignUp></SignUp>} /> */}
       </Routes>
-      
     </div>
   );
 }
