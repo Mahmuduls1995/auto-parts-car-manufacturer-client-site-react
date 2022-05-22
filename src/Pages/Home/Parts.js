@@ -10,17 +10,6 @@ const Parts = () => {
     }, []);
 
     return (
-        // <div>
-        //     <h2>Out Parts of Product</h2>
-        //     {
-        //         parts.map((part) =><div key={part._id}>
-        //             <h2>Name:{part.name}</h2>
-        //         </div>)
-        //     }
-
-
-        // </div>
-
 
         <div className="bg-gray-200">
 
@@ -39,15 +28,15 @@ const Parts = () => {
                                         <img src={pd.img} className="card-img-top img-fluid " alt="..." />
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title"><strong>Product Name</strong>: {pd.name}</h5>
-                                        <p className="card-text"><strong>Description</strong>:  {pd.description.slice(0, 80)}</p>
+                                        <h5 className="card-title"><strong>Product Name</strong>:{pd.name}</h5>
+                                        <p className="card-text"><strong>Description</strong>:{pd.description.slice(0, 80)}</p>
                                         <li className="list-group-item"><strong> Minimum Quantity</strong>: {pd.minimum_order_quantity}</li>
                                         <li className="list-group-item"><strong>Available Quantity</strong>: {pd.available_quantity}</li>
                                         <li className="list-group-item"><strong>Price</strong>: {pd.price}</li>
 
                                     </div>
 
-                                    
+
                                     {/* <ul className="list-group list-group-flush">
                                       
                                         <li className="list-group-item"><strong> Minimum Quantity</strong>: {pd.minimum_order_quantity}</li>
@@ -55,6 +44,7 @@ const Parts = () => {
                                         <li className="list-group-item"><strong>Price</strong>: {pd.price}</li>
                                        
                                     </ul> */}
+                                    
                                     <div className=" my-2 text-center ">
                                         <Link to={'/'}><button className='btn  px-5 btn-primary '>Order Now</button> </Link>
                                     </div>

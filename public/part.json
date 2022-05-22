@@ -1,7 +1,7 @@
 [
     {
       "_id": 1,
-      "name": "Electroplating",
+      "name":"Electroplating",
       "img": "https://i.ibb.co/bFXBQNm/parts-2.png",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, soluta.",
       "minimum_order_quantity": 1000,
@@ -10,7 +10,7 @@
     },
     {
       "_id": 2,
-      "name": "Auto Parts",
+      "name":"Auto Parts",
       "img": "https://i.ibb.co/bFXBQNm/parts-2.png",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, soluta.",
       "minimum_order_quantity": 500,
@@ -19,7 +19,7 @@
     },
     {
       "_id": 3,
-      "name": " Injection Molding",
+      "name":"Molding",
       "img": "https://i.ibb.co/bFXBQNm/parts-2.png",
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, soluta.",
       "minimum_order_quantity": 800,

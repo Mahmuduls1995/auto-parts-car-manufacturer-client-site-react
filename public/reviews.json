@@ -1,0 +1,23 @@
+[
+    {
+      "_id": 1,
+      "name": "Mamun",
+      "img": "https://i.ibb.co/nQCMX87/IMG-2020.jpg",
+      "comment": "Lorem ipsum dolor sit amet consectetur.",
+      "rating": 5
+    },
+    {
+      "_id": 2,
+      "name": "Maimun",
+      "img": "https://i.ibb.co/nQCMX87/IMG-2020.jpg",
+      "comment": "Lorem ipsum dolor sit amet consectetur",
+      "rating": 5
+    },
+    {
+      "_id": 3,
+      "name": "Munna",
+      "img": "https://i.ibb.co/nQCMX87/IMG-2020.jpg",
+      "comment": "Lorem ipsum dolor sit amet consectetur",
+      "rating": 5
+    }
+  ]
