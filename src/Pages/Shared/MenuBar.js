@@ -16,7 +16,7 @@ const MenuBar = () => {
     const logout = () => {
         signOut(auth);
         toast.error('Logged Out')
-        // localStorage.removeItem('accessToken');
+        localStorage.removeItem('accessToken');
     };
     // const { photoURL: img } = user;
 
