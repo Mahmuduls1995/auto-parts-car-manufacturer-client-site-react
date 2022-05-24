@@ -35,6 +35,27 @@ const Login = () => {
         navigate(from, { replace: true });
     }
 
+
+    if (user) {
+        console.log(user);
+        const url = 'http://localhost:5000/login';
+
+        fetch(url, {
+            method: 'POST',
+            body: JSON.stringify({
+                email: user.email
+            }),
+            headers: {
+                'Content-type': 'application/json; charset=UTF-8',
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                localStorage.setItem("accessToken", data.token);
+                navigate(from, { replace: true });
+            });
+    }
+
     
     // useEffect(() => {
     //     if (token) {

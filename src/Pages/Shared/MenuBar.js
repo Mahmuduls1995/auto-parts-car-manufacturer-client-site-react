@@ -17,10 +17,10 @@ const MenuBar = () => {
         signOut(auth);
         toast.error('Logged Out')
         // localStorage.removeItem('accessToken');
-      };
+    };
     // const { photoURL: img } = user;
 
-   
+
     useEffect(() => {
         window.addEventListener("scroll", () => {
             if (window.scrollY > 50) {
@@ -31,12 +31,13 @@ const MenuBar = () => {
         })
     }, []);
     return (
-        <Navbar
+        <Navbar 
             collapseOnSelect
             expand="lg"
             variant="primary"
             fixed="top"
             className={(isSticky || isCollapsed) ? "text-kalo shadow-sm bg-white py-2" : "py-4"}>
+                
             <Container>
                 <Navbar.Brand
                     as={Link}
@@ -57,18 +58,23 @@ const MenuBar = () => {
 
                         <Nav.Link className="rounded px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/contact">Contact Us</Nav.Link>
 
+                        {user && <Nav.Link className="rounded mx-2 px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/dashboard">Dashboard</Nav.Link>}
+
+
                         <Nav.Link className="rounded px-2 mx-2 bg-base-100 hover:bg-gray-300">
                             {
-                                
-                            user ? <button className=""  onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>
-                            
+
+                                user ? <button className="" onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>
+
                             }
-                            
+
+
+
+
                         </Nav.Link>
 
 
 
-                        {/* {user.email && <Nav.Link as={Link} to="/dashboard">Dashboard</Nav.Link>} */}
 
 
                         {/* {!user?.email ?
@@ -85,10 +91,21 @@ const MenuBar = () => {
 
 
 
-
                     </Nav>
                 </Navbar.Collapse>
+
             </Container>
+
+
+            <div className="  ">
+                <div className="navbar-end">
+                    <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5  " fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                    </label>
+                </div>
+            </div>
+
+
         </Navbar>
     );
 };

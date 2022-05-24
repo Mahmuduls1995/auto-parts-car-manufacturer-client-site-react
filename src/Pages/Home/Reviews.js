@@ -3,10 +3,11 @@ import React, { useEffect, useState } from 'react';
 const Reviews = () => {
     const [reviews, setReviews] = useState([])
     useEffect(() => {
-        fetch('reviews.json')
+        fetch('http://localhost:5000/review')
             .then((response) => response.json())
             .then((data) => setReviews(data));
     }, []);
+
     return (
         <div>
             <h2 className="text-center my-1  text-3xl font-bold text-primary">Customer Review Here</h2>
@@ -14,16 +15,16 @@ const Reviews = () => {
             <div class="p-3 row ">
 
                 {
-                    reviews.map((review) => <div className="col-12 col-sm-12 col-xl-4 col-lg-4 col-md-6" key={review._id}>
+                    reviews.map((review) => <div className="col-12 col-sm-12 col-xl-4 mb-3 col-lg-4 col-md-6" key={review._id}>
 
                         <div class=" ">
 
                             <div class="flex flex-col items-center w-full p-6 space-y-8 rounded-md lg:h-full lg:p-8 dark:bg-gray-900 dark:text-gray-100">
 
-                                <img src={review.img} alt="" class="w-20 h-20 rounded-full dark:bg-gray-500" />
-                                <blockquote class="max-w-lg text-lg italic font-medium text-center">"{review.comment}"</blockquote>
+                                <img src={review?.img} alt="" class="w-20 h-20 rounded-full dark:bg-gray-500" />
+                                <blockquote class="max-w-lg text-lg italic font-medium text-center">"{review?.comment}"</blockquote>
                                 <div class="text-center dark:text-gray-400">
-                                    <p>{review.name}</p>
+                                    <p>{review?.name}</p>
 
                                     <div class="flex items-center space-x-2 dark:text-yellow-500">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-5 h-5 fill-current">

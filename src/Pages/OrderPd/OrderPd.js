@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
@@ -19,24 +19,45 @@ const OrderPd = () => {
     const newQuantity = quantity;
     const available_quantity = parts.available_quantity;
     const minimum_quantity = parts.minimum_order_quantity;
-    
 
-    
     useEffect(() => {
         const url = `http://localhost:5000/single_parts/${id}`;
-
         fetch(url)
             .then((response) => response.json())
             .then(data => setParts(data))
 
-
-    }, [])
+    }, [id])
 
 
 
 
     const handleOrder = event => {
         event.preventDefault();
+
+        const order = {
+            email: user.email,
+            orderQuantity: event.target.quantity.value,
+            address: event.target.address.value,
+            phone: event.target.phone.value,
+            productName: parts.name,
+            productImage: parts.img,
+            productPrice: parts.price,
+            productDescription: parts.description
+
+        }
+
+        axios.post('http://localhost:5000/order', order)
+            .then(response => {
+                const { data } = response;
+                if (data.insertedId) {
+                    toast('Your Order was successfully')
+                    event.target.reset()
+
+                }
+                console.log(response);
+            })
+
+
 
         const newQuantity = event.target.quantity.value;
         // const newQuantity = quantity.minimum_order_quantity;
@@ -45,7 +66,7 @@ const OrderPd = () => {
         console.log(newQuantity);
 
         if (newQuantity > available_quantity || newQuantity < minimum_quantity) {
-            return toast.error('You can not order more than ' + available_quantity + ' And Must order' + minimum_quantity + ' above of minimum quantity ')
+            return toast.error('You can not order more than ' + available_quantity + ' And Must order ' + minimum_quantity + ' above of minimum quantity ')
 
         }
 
@@ -66,7 +87,7 @@ const OrderPd = () => {
     }
 
     //  const handleQuantityChange=event => {
-        
+
     //     const{minimum_order_quantity,...rest}=parts;
     //     const newQuantity =event.target.value;
     //     const newUser={minimum_order_quantity:newQuantity,...rest};
@@ -76,6 +97,10 @@ const OrderPd = () => {
     //     setParts(newUser)
     // }
 
+
+
+
+   
 
 
     return (
@@ -102,11 +127,11 @@ const OrderPd = () => {
                         </ul>
 
                         <div>
-                            <form onSubmit={handleOrder} >
+                            <form onSubmit={handleOrder } >
 
-                                <input type="number" className="border-2 w-full text-center py-2 border-green-700 my-3" placeholder={parts?.minimum_order_quantity} 
-                                 onChange={handleQuantityChange}
-                                name="quantity"
+                                <input type="number" className="border-2 w-full text-center py-2 border-green-700 my-3" placeholder={parts?.minimum_order_quantity}
+                                    onChange={handleQuantityChange}
+                                    name="quantity"
                                 />
 
 
@@ -127,9 +152,11 @@ const OrderPd = () => {
 
                                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full my-2 " />
 
-                                <button 
-                                disabled={newQuantity > available_quantity || newQuantity < minimum_quantity}
-                                className="btn btn-primary w-100 mx-auto " >Please Order</button>
+                                <button
+                                    
+                                    type="submit"
+                                    disabled={newQuantity > available_quantity || newQuantity < minimum_quantity}
+                                    className="btn btn-primary w-100 mx-auto " >Please Order</button>
 
                                 {/* <button 
                                 disabled={newQuantity > available_quantity || newQuantity < minimum_quantity}
