@@ -60,7 +60,7 @@ const MenuBar = () => {
                         <Nav.Link className="rounded px-2 mx-2 bg-base-100 hover:bg-gray-300">
                             {
                                 
-                            user ? <button className="btn btn-ghost"  onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>
+                            user ? <button className=""  onClick={logout} >Sign Out</button> : <Link to="/login">Login</Link>
                             
                             }
                             

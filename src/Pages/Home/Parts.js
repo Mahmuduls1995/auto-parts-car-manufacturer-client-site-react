@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Parts = () => {
     const [parts, setParts] = useState([])
     useEffect(() => {
-        fetch('part.json')
+        fetch('http://localhost:5000/single_parts')
             .then((response) => response.json())
             .then((data) => setParts(data));
     }, []);
@@ -29,18 +29,18 @@ const Parts = () => {
 
 
                                     <div className="w-80  mx-auto h-fit transform cursor-pointer hover transition duration-500 hover:scale-125  ">
-                                        <img src={pd.img} className="card-img-top img-fluid  " alt="..." />
+                                        <img src={pd?.img} className="card-img-top img-fluid  " alt="..." />
                                     </div>
                                     <div className="card-body ">
-                                        <h5 className="card-title text-white"><strong>Product Name</strong>:{pd.name}</h5>
+                                        <h5 className="card-title text-white"><strong>Product Name</strong>:{pd?.name}</h5>
                                         
                                         <p className="card-text text-white"><strong>Description</strong>:{pd.description.slice(0, 80)}</p>
 
-                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong> Minimum Quantity</strong>: {pd.minimum_order_quantity}</li>
+                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong> Minimum Quantity</strong>: {pd?.minimum_order_quantity}</li>
 
-                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong>Available Quantity</strong>: {pd.available_quantity}</li>
+                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong>Available Quantity</strong>: {pd?.available_quantity}</li>
 
-                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong>Price</strong>: {pd.price}</li>
+                                        <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong>Price</strong>: {pd?.price}</li>
 
                                     </div>
 
@@ -54,7 +54,7 @@ const Parts = () => {
                                     </ul> */}
 
                                     <div className=" my-2 text-center ">
-                                        <Link to={`/orderPd/${pd._id}`}><button className='btn  px-5 btn-primary '>Order Now</button> </Link>
+                                        <Link to={`/orderPd/${pd?._id}`}><button className='btn  px-5 btn-primary '>Order Now</button> </Link>
                                     </div>
                                 </div>
 

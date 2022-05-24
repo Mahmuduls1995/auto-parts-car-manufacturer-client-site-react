@@ -8,6 +8,7 @@ import MenuBar from './Pages/Shared/MenuBar';
 import Login from './Pages/UserLogin/Login';
 import SignUp from './Pages/UserLogin/SignUp';
 import OrderPd from './Pages/OrderPd/OrderPd';
+import PrivateAuth from './Pages/UserLogin/PrivateAuth';
 function App() {
   return (
     <div className="mx-w-7xl mx-auto px-12">
@@ -18,8 +19,9 @@ function App() {
         <Route path="/login" element={<Login></Login>} />
         <Route path="/signup" element={<SignUp></SignUp>} />
         <Route path="/orderPd/:id" element={
-         
-            <OrderPd></OrderPd>
+         <PrivateAuth>
+           <OrderPd></OrderPd>
+         </PrivateAuth>
       
         }></Route>
         
