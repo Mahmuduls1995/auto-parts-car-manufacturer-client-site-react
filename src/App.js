@@ -18,6 +18,7 @@ import RequireAdmin from './Pages/UserLogin/RequireAdmin';
 import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageOrder from './Pages/Dashboard/ManageOrder';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
+import Payment from './Pages/Dashboard/Payment';
 function App() {
   return (
     <div className="mx-w-7xl mx-auto px-12">
@@ -29,6 +30,7 @@ function App() {
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
+          <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="makeAdmin" element={<RequireAdmin><Makeadmin></Makeadmin></RequireAdmin>}></Route>
           <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>

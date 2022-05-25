@@ -36,6 +36,7 @@ const OrderPd = () => {
 
         const order = {
             email: user.email,
+            name:user.displayName,
             orderQuantity: event.target.quantity.value,
             address: event.target.address.value,
             phone: event.target.phone.value,

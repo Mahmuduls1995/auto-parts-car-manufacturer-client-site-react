@@ -41,11 +41,12 @@ const AddProduct = () => {
                     axios.post('http://localhost:5000/single_parts', parts)
                         .then(response => {
                             const data = response;
-                            if (data.insertedId) {
+                            if (data.data.insertedId) {
                                 toast.success('Your Upload is successfully')
                                 reset();
                             }
                             console.log(response);
+                            console.log(data.data.insertedId);
                         })
 
 

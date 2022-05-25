@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 const ManageProduct = () => {
 
@@ -26,6 +27,7 @@ const ManageProduct = () => {
                         console.log('deleted');
                         const remaining = products.filter(product => product._id !== id);
                         setProducts(remaining)
+                        toast.success('Your product has been deleted')
 
                     }
                 });
