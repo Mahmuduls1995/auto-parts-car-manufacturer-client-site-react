@@ -34,7 +34,7 @@ const Parts = () => {
                                     <div className="card-body ">
                                         <h5 className="card-title text-white"><strong>Product Name</strong>:{pd?.name}</h5>
                                         
-                                        <p className="card-text text-white"><strong>Description</strong>:{pd.description.slice(0, 80)}</p>
+                                        <p className="card-text text-white"><strong>Description</strong>:{pd.description.slice(0, 60)}</p>
 
                                         <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong> Minimum Quantity</strong>: {pd?.minimum_order_quantity}</li>
 

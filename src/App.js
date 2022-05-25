@@ -14,6 +14,10 @@ import MyOrder from './Pages/Dashboard/MyOrder';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import MyReview from './Pages/Dashboard/MyReview';
 import Makeadmin from './Pages/Dashboard/Makeadmin';
+import RequireAdmin from './Pages/UserLogin/RequireAdmin';
+import AddProduct from './Pages/Dashboard/AddProduct';
+import ManageOrder from './Pages/Dashboard/ManageOrder';
+import ManageProduct from './Pages/Dashboard/ManageProduct';
 function App() {
   return (
     <div className="mx-w-7xl mx-auto px-12">
@@ -26,7 +30,10 @@ function App() {
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
-          <Route path="makeAdmin" element={<Makeadmin></Makeadmin>}></Route>
+          <Route path="makeAdmin" element={<RequireAdmin><Makeadmin></Makeadmin></RequireAdmin>}></Route>
+          <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
+          <Route path="manageOrder" element={<ManageOrder></ManageOrder>}></Route>
+          <Route path="manageProduct" element={<ManageProduct></ManageProduct>}></Route>
 
         </Route>
 
