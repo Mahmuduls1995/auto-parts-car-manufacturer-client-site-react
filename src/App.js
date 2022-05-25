@@ -19,6 +19,9 @@ import AddProduct from './Pages/Dashboard/AddProduct';
 import ManageOrder from './Pages/Dashboard/ManageOrder';
 import ManageProduct from './Pages/Dashboard/ManageProduct';
 import Payment from './Pages/Dashboard/Payment';
+import NotFound from './Pages/NotFound/NotFound';
+import Portfolio from './Pages/Portfolio/Portfolio';
+import Blogs from './Pages/Portfolio/Blogs';
 function App() {
   return (
     <div className="mx-w-7xl mx-auto px-12">
@@ -26,10 +29,13 @@ function App() {
       <MenuBar></MenuBar>
       <Routes>
         <Route path="/" element={<Home></Home>} />
+        <Route path="portfolio" element={<Portfolio></Portfolio>}></Route>
+        <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>} />
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
           <Route index element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
+
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
           <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="makeAdmin" element={<RequireAdmin><Makeadmin></Makeadmin></RequireAdmin>}></Route>
@@ -48,6 +54,8 @@ function App() {
           </PrivateAuth>
 
         }></Route>
+
+        <Route path="*" element={<NotFound></NotFound>}></Route>
 
       </Routes>
       <ToastContainer></ToastContainer>

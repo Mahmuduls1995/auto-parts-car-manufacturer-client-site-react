@@ -54,9 +54,9 @@ const MenuBar = () => {
                     <Nav className="ms-auto">
                         <Nav.Link className="rounded px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/">Home</Nav.Link>
 
-                        <Nav.Link className="rounded px-2 bg-base-100 mx-2 hover:bg-gray-300" as={Link} to="/carsCollection">Available Parts</Nav.Link>
+                        <Nav.Link className="rounded px-2 bg-base-100 mx-2 hover:bg-gray-300" as={Link} to="/portfolio">My Portfolio</Nav.Link>
 
-                        <Nav.Link className="rounded px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/contact">Contact Us</Nav.Link>
+                        <Nav.Link className="rounded px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/blogs">Blogs</Nav.Link>
 
                         {user && <Nav.Link className="rounded mx-2 px-2 bg-base-100 hover:bg-gray-300" as={Link} to="/dashboard">Dashboard</Nav.Link>}
 

@@ -8,7 +8,6 @@ import auth from '../../firebase.init';
 
 const MyOrder = () => {
 
-
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([])
     const navigate = useNavigate();
@@ -63,11 +62,6 @@ const MyOrder = () => {
 
         }
     }
-
-
-
-
-
 
 
     return (
