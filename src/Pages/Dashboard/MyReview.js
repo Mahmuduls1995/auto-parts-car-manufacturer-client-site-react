@@ -10,34 +10,6 @@ const MyReview = () => {
         event.preventDefault();
 
 
-        // const order = {
-        //     email: user.email,
-        //     product_name: data.product_name,
-        //     img: data.img,
-        //     description: data.description,
-        //     price: data.price,
-        //     quantity: data.quantity,
-        //     supplier_name: data.supplier_name,
-
-        // }
-
-        
-
-        // axios.post('https://morning-waters-97427.herokuapp.com/order', order)
-        //     .then(response => {
-        //         const data = response;
-        //         if (data.insertedId) {
-        //             toast('Your upLoad is successfully')
-        //         }
-        //         console.log(response);
-        //     })
-
-
-
-
-
-
-
         const url = 'http://localhost:5000/review';
 
         fetch(url, {
