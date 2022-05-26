@@ -14,16 +14,15 @@ const Makeadmin = () => {
         return <Loading></Loading>
     }
     return (
-        <div>
-            <h2>All Users:{users.length}</h2>
+        <div className="mt-2">
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead className="bg-base-300 ">
                         <tr>
                             <th></th>
-                            <th>Name</th>
-                            <th>Job</th>
-                            <th>Favorite Color</th>
+                            <th>Email</th>
+                            <th>Admin</th>
+                           
                         </tr>
                     </thead>
                     <tbody>
