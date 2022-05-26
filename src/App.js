@@ -33,11 +33,11 @@ function App() {
         <Route path="blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/login" element={<Login></Login>} />
         <Route path="/dashboard" element={<Dashboard></Dashboard>}>
-          <Route index element={<MyOrder></MyOrder>}></Route>
+          <Route  index element={<MyProfile></MyProfile>}></Route>
+          <Route path="myOrder" element={<MyOrder></MyOrder>}></Route>
           <Route path="review" element={<MyReview></MyReview>}></Route>
 
           <Route path="payment/:id" element={<Payment></Payment>}></Route>
-          <Route path="profile" element={<MyProfile></MyProfile>}></Route>
           <Route path="makeAdmin" element={<RequireAdmin><Makeadmin></Makeadmin></RequireAdmin>}></Route>
           <Route path="addProduct" element={<AddProduct></AddProduct>}></Route>
           <Route path="manageOrder" element={<ManageOrder></ManageOrder>}></Route>

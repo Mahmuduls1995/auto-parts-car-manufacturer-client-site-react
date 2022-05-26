@@ -15,6 +15,7 @@ const MyOrder = () => {
         const getOrders = async () => {
             const email = user.email;
             const url = `https://mysterious-badlands-57067.herokuapp.com/order?email=${email}`;
+
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -67,7 +68,7 @@ const MyOrder = () => {
     return (
 
         <div>
-            <h2>MY order:{orders.length}</h2>
+            <h2 className="my-2">My order:{orders.length}</h2>
             <div class="overflow-x-auto">
                 <table class="table w-full">
                     <thead>
