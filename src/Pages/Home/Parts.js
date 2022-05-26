@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Parts = () => {
     const [parts, setParts] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/single_parts')
+        fetch('https://mysterious-badlands-57067.herokuapp.com/single_parts')
             .then((response) => response.json())
             .then((data) => setParts(data));
     }, []);
@@ -13,9 +13,9 @@ const Parts = () => {
 
         <div className="bg-gray-200">
 
-           <div className="text-center">
-           <h2 className="text-center my-3 text-white font-bold text-2xl rounded-lg p-4 bg-gradient-to-r from-sky-500 to-indigo-500 d-inline-block ">OUR PRODUCTS</h2>
-           </div>
+            <div className="text-center">
+                <h2 className="text-center my-3 text-white font-bold text-2xl rounded-lg p-4 bg-gradient-to-r from-sky-500 to-indigo-500 d-inline-block ">OUR PRODUCTS</h2>
+            </div>
 
             <div className="">
 
@@ -33,7 +33,7 @@ const Parts = () => {
                                     </div>
                                     <div className="card-body ">
                                         <h5 className="card-title text-white"><strong>Product Name</strong>:{pd?.name}</h5>
-                                        
+
                                         <p className="card-text text-white"><strong>Description</strong>:{pd.description.slice(0, 60)}</p>
 
                                         <li className="list-group-item bg-gradient-to-r from-cyan-500 to-blue-50"><strong> Minimum Quantity</strong>: {pd?.minimum_order_quantity}</li>

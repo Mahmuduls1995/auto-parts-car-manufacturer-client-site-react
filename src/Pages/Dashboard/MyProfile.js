@@ -7,7 +7,7 @@ import auth from '../../firebase.init';
 
 const MyProfile = () => {
     const [user] = useAuthState(auth);
-    const { register, handleSubmit,reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
 
     // console.log(user);
 
@@ -30,7 +30,7 @@ const MyProfile = () => {
 
 
 
-        fetch('http://localhost:5000/profile', {
+        fetch('https://mysterious-badlands-57067.herokuapp.com/profile', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

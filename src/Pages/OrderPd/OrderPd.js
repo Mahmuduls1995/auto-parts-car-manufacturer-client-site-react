@@ -21,7 +21,7 @@ const OrderPd = () => {
     const minimum_quantity = parts.minimum_order_quantity;
 
     useEffect(() => {
-        const url = `http://localhost:5000/single_parts/${id}`;
+        const url = `https://mysterious-badlands-57067.herokuapp.com/single_parts/${id}`;
         fetch(url)
             .then((response) => response.json())
             .then(data => setParts(data))
@@ -36,7 +36,7 @@ const OrderPd = () => {
 
         const order = {
             email: user.email,
-            name:user.displayName,
+            name: user.displayName,
             orderQuantity: event.target.quantity.value,
             address: event.target.address.value,
             phone: event.target.phone.value,
@@ -47,7 +47,7 @@ const OrderPd = () => {
 
         }
 
-        axios.post('http://localhost:5000/order', order)
+        axios.post('https://mysterious-badlands-57067.herokuapp.com/order', order)
             .then(response => {
                 const { data } = response;
                 if (data.insertedId) {
@@ -101,7 +101,7 @@ const OrderPd = () => {
 
 
 
-   
+
 
 
     return (
@@ -128,7 +128,7 @@ const OrderPd = () => {
                         </ul>
 
                         <div>
-                            <form onSubmit={handleOrder } >
+                            <form onSubmit={handleOrder} >
 
                                 <input type="number" className="border-2 w-full text-center py-2 border-green-700 my-3" placeholder={parts?.minimum_order_quantity}
                                     onChange={handleQuantityChange}
@@ -154,7 +154,7 @@ const OrderPd = () => {
                                 <input type="text" name="address" placeholder="Address" class="input input-bordered w-full my-2 " />
 
                                 <button
-                                    
+
                                     type="submit"
                                     disabled={newQuantity > available_quantity || newQuantity < minimum_quantity}
                                     className="btn btn-primary w-100 mx-auto " >Please Order</button>

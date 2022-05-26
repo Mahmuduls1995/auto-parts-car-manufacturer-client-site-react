@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddProduct = () => {
-    const { register, handleSubmit,reset } = useForm();
+    const { register, handleSubmit, reset } = useForm();
     const [user] = useAuthState(auth);
     const imageStorageKey = '438bbb9878273fc293f3ec8f80ed367c';
 
@@ -38,7 +38,7 @@ const AddProduct = () => {
                         available_quantity: data.available_quantity,
                     }
 
-                    axios.post('http://localhost:5000/single_parts', parts)
+                    axios.post('https://mysterious-badlands-57067.herokuapp.com/single_parts', parts)
                         .then(response => {
                             const data = response;
                             if (data.data.insertedId) {
@@ -55,7 +55,7 @@ const AddProduct = () => {
             })
 
 
-      
+
 
 
 

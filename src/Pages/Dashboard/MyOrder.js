@@ -14,7 +14,7 @@ const MyOrder = () => {
     useEffect(() => {
         const getOrders = async () => {
             const email = user.email;
-            const url = `http://localhost:5000/order?email=${email}`;
+            const url = `https://mysterious-badlands-57067.herokuapp.com/order?email=${email}`;
             try {
                 const { data } = await axios.get(url, {
                     headers: {
@@ -43,7 +43,7 @@ const MyOrder = () => {
 
             console.log('deleting  user id', id);
 
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://mysterious-badlands-57067.herokuapp.com/order/${id}`;
 
             fetch(url, {
                 method: 'DELETE'
@@ -58,7 +58,7 @@ const MyOrder = () => {
 
                     }
                 });
-        
+
 
         }
     }
@@ -101,7 +101,7 @@ const MyOrder = () => {
 
                                     }
 
-                                   
+
 
 
                                     {(a.productPrice && a.paid) && <div>

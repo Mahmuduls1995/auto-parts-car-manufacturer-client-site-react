@@ -39,7 +39,7 @@ const Login = () => {
 
     if (user) {
         console.log(user);
-        const url = 'http://localhost:5000/login';
+        const url = 'https://mysterious-badlands-57067.herokuapp.com/login';
 
         fetch(url, {
             method: 'POST',
@@ -57,7 +57,7 @@ const Login = () => {
             });
     }
 
-    
+
     // useEffect(() => {
     //     if (token) {
     //         navigate(from, { replace: true });
@@ -84,7 +84,7 @@ const Login = () => {
             background: `url(${loginBackground})`,
             backgroundSize: 'cover'
         }}
-        className='flex h-screen justify-center items-center'>
+            className='flex h-screen justify-center items-center'>
             <div className="card w-96  bg-gray-300 shadow-xl">
                 <div className="card-body">
                     <h2 className="text-center text-2xl font-bold">Login</h2>

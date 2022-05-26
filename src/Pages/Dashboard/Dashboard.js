@@ -21,19 +21,18 @@ const Dashboard = () => {
                 <ul class="menu p-4 overflow-y-auto w-full bg-purple-200 text-base-content ">
                     {/* <!-- Sidebar content here --> */}
 
-                    <li><Link to="/dashboard">My Order</Link></li>
-                    <li><Link to="/dashboard/review">My Review</Link></li>
+                    {/* <li><Link to="/dashboard">My Order</Link></li>
+                    <li><Link to="/dashboard/review">My Review</Link></li> */}
                     
                     <li><Link to="/dashboard/profile">My Profile</Link></li>
 
 
-                    {/* {!user && <>
+                    {!user && <>
                         <li><Link to="/dashboard">My Order</Link></li>
                         <li><Link to="/dashboard/review">My Review</Link></li>
 
-                    </>} */}
+                    </>}
 
-                    {/* <li><Link to="/dashboard/users">All Users</Link></li> */}
 
 
                     {admin && <>

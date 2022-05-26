@@ -10,13 +10,13 @@ const MyReview = () => {
         event.preventDefault();
 
 
-        const url = 'http://localhost:5000/review';
+        const url = 'https://mysterious-badlands-57067.herokuapp.com/review';
 
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
-              
+
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
@@ -29,7 +29,7 @@ const MyReview = () => {
 
     }
 
-    
+
     return (
         <div className=" ">
             <h2 className="text-2xl ">Add Review </h2>
@@ -62,7 +62,7 @@ const MyReview = () => {
                         <textarea placeholder="Comment" name="comment" className="px-2 text-center border mb-2" {...register("comment")} />
                     </div>
 
-                    
+
 
 
                     <div className="form-control bg-base-300 w-full max-w-xs ">
@@ -86,7 +86,7 @@ const MyReview = () => {
                             <span className="label-text">Photo</span>
                         </label>
 
-                        <input placeholder="Photo Url" name="img" className=" px-2 text-center py-2 border "  type="text" {...register("img")} />
+                        <input placeholder="Photo Url" name="img" className=" px-2 text-center py-2 border " type="text" {...register("img")} />
 
                         <label className="label">
                             {errors.name?.type === 'required' && <span className="label-text-alt text-red-500">{errors.name.message}</span>}
