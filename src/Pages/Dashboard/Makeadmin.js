@@ -26,6 +26,7 @@ const Makeadmin = () => {
                         </tr>
                     </thead>
                     <tbody>
+
                         {
                             users.map((user, index) => <UserRow
                                 key={user._id}
@@ -33,7 +34,10 @@ const Makeadmin = () => {
                                 index={index}
                                 refetch={refetch}
                             ></UserRow>)
+
+                            
                         }
+
                     </tbody>
                 </table>
             </div>
